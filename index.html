@@ -14,20 +14,20 @@
     h = 2699*scale;
     x = w/100;
     y = h/100;
-    function xp(p){ return p*x }; function yp(p){ return p*y}; //x percent y percent
+    function hp(p){ return (h/100)*p }; function wp(p){ return (w/100)*p}; //height percent width percent
 
     function update(){
       ctx.beginPath();
       ctx.fillStyle = "#FFF";
-      ctx.roundRect(0, 0, w, h, xp(5));
+      ctx.roundRect(0, 0, w, h, wp(5));
       ctx.fill();
       ctx.fillStyle = "#F00";
-      ctx.fillRect(0, yp(30), w, h/7);
+      ctx.fillRect(0, hp(30), w, h/7);
       ctx.fillStyle = "#000";
       ctx.textAlign = "center";
-      ctx.font = (h/10)+"px Arial";
-      ({width} = ctx.measureText("Edric Adrian Cantu"));
-      ctx.fillText("Edric Adrian Cantu", w/2, (y*30));
+      ctx.font = hp(10)+"px Arial";
+      ({width: textWidth} = ctx.measureText("Edric Adrian Cantu"));
+      ctx.fillText("Edric Adrian Cantu", wp(50), hp(30));
     } 
     update();
   </script>
