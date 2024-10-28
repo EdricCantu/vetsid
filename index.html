@@ -1,9 +1,57 @@
 <html><head>
-  
-</head><body style="display: flex; width: 100%; height: 100%; justify-content: center; align-items: center; margin: 0; background: #000;">
-  <canvas id="can" width="4280" height="2699" style="aspect-ratio: 64200/40585; max-width: 90vw; max-height: 90vh"></canvas>
-  <script src="e.js">
-
-    
-  </script>
+  <title>Vets ID Generator</title>
+  <link rel="icon" href="VetsM+border.png">
+</head><body>
+  <style>
+    @media print{
+      @page{
+        size: 8.5in 5.5in;
+        size: landscape;
+      }
+      body{
+        background: #fff;
+        margin: 5mm;
+      }
+      #can{
+        height: 53.98mm;
+        width: 85.60mm;
+        aspect-ratio: 8560/5398 !important;
+        max-height: 53.98mm;
+        max-width: 85.60mm;
+        min-height: 53.98mm;
+        min-width: 85.60mm;
+        border: 1mm dashed #000;
+        border-radius: calc( 85.60mm / 20 ); /* 5% of width*/
+        aspect-ratio: 8560/5398;
+      }
+    }
+    @media screen{
+      #can{
+        aspect-ratio: 8560/5398 !important;
+        max-width: 90vw !important; max-height: 90vh !important;
+        border-radius: 5%; /* 5% of width */
+      }
+      body{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background: #000;
+      }
+    }
+    @media screen and (max-aspect-ratio: 8560/5398){
+      #can{
+        width: 90vw;
+      }
+    }
+    @media screen and (min-aspect-ratio: 8560/5398){
+      #can{
+        height: 90vh;
+      }
+    }
+  </style>
+  <canvas id="can"></canvas>
+  <script src="new.js"></script>
 </body></html>
